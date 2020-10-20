@@ -10,8 +10,11 @@
 
     <modules>
         <module>msc-provider-payment-8001</module>
-        <module>msc-consumer-order-8002</module>
+        <module>msc-consumer-order-8080</module>
         <module>msc-api-commons</module>
+        <module>msc-eureka-server7001</module>
+        <module>msc-eureka-server-7002</module>
+        <module>msc-provider-payment-8002</module>
     </modules>
 
     <packaging>pom</packaging>
