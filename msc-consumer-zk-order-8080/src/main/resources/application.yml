@@ -1,0 +1,9 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: msc-consumer-order
+  cloud:
+    #注册到Zookeeper地址
+    zookeeper:
+      connect-string: 127.0.0.1:2181
