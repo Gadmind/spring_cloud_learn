@@ -20,6 +20,8 @@
         <module>msc-provider-consul-payment-8006</module>
         <module>msc-consumer-consul-order-8080</module>
         <module>msc-consumer-feign-order-8080</module>
+        <module>msc-provider-hystrix-payment8001</module>
+        <module>msc-consumer-feign-hystrix-8080</module>
     </modules>
 
     <packaging>pom</packaging>
