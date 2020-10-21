@@ -1,0 +1,16 @@
+#服务端口号
+server:
+  port: 8004
+#服务名
+spring:
+  application:
+    name: msc-payment-service
+  cloud:
+    zookeeper:
+      #Zookeeper服务端地址
+      connect-string: 127.0.0.1:2181
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.daop.msc.payment.entities
