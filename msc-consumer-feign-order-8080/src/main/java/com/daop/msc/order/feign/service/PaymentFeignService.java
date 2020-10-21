@@ -21,4 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface PaymentFeignService {
     @GetMapping("/get/{id}")
     CommonResult<Payment> getPaymentById(@PathVariable("id") Long id);
+
+    @GetMapping("/feign/timeout")
+    String paymentFeignTimeout();
 }

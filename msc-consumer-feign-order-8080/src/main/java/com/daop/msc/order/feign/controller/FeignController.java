@@ -18,12 +18,20 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 @Slf4j
-public class FeignController {
+public class
+FeignController {
     @Autowired
     private PaymentFeignService paymentFeignService;
 
     @GetMapping("/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id) {
         return paymentFeignService.getPaymentById(id);
+    }
+
+    @GetMapping("/feign/timeout")
+    public String paymentFeignTimeout() {
+        //fegin
+        return paymentFeignService.paymentFeignTimeout();
+
     }
 }

@@ -18,3 +18,12 @@ eureka:
     instance-id: consumer8080
     #显示服务IP地址
     prefer-ip-address: true
+ribbon:
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ReadTimeout: 5000
+  #指的是建立连接所用的时间，适用于网络正常的情况下，两端连接所用的时间
+  ConnectionTimeout: 5000
+logging:
+  level:
+    #feign日志以什么级别监控那个接口
+    com.daop.msc.order.feign.service.PaymentFeignService: debug
