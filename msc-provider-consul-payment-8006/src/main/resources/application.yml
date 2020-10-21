@@ -1,0 +1,13 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: msc-payment-service
+  cloud:
+    #Consul服务配置中心
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        #hostname: 127.0.0.1
+        service-name: ${spring.application.name}
