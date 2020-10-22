@@ -1,0 +1,6 @@
+server:
+  port: 9001
+#此配置表示Hystrix代理所有服务流列表
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
