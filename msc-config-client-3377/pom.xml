@@ -9,7 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>msc-config-client-3355</artifactId>
+    <artifactId>msc-config-client-3377</artifactId>
+
     <dependencies>
         <!--SpringBoot Web Actuator-->
         <dependency>
@@ -59,5 +60,4 @@
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
     </dependencies>
-
 </project>
