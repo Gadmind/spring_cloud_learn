@@ -1,0 +1,28 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: msc-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Gadmind/msc-config-center.git #gitHub上面的git仓库名字
+          #搜索目录
+          search-paths:
+            - msc-config-center
+          username: #yourGitHubUsername
+          password: #yourGitHubPassword
+      #读取分支
+      label: main
+
+#注册到Eureka服务注册中心
+eureka:
+  instance:
+    hostname: msc-config-center-3344
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
