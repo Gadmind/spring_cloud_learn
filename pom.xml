@@ -22,6 +22,10 @@
         <module>msc-consumer-feign-order-8080</module>
         <module>msc-provider-hystrix-payment8001</module>
         <module>msc-consumer-feign-hystrix-8080</module>
+        <module>msc-hystrix-dashboard-9001</module>
+        <module>msc-gateway-9527</module>
+        <module>msc-config-center-3344</module>
+        <module>msc-config-client-3355</module>
     </modules>
 
     <packaging>pom</packaging>
