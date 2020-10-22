@@ -16,6 +16,20 @@ spring:
           password: #yourGitHubPassword
       #读取分支
       label: main
+  #RabbitMQ相关配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+#RabbitMQ相关配置
+management:
+  #暴露Bus刷新配置的端点
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"
 
 #注册到Eureka服务注册中心
 eureka:
