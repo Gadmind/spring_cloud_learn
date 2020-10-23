@@ -26,6 +26,9 @@
         <module>msc-gateway-9527</module>
         <module>msc-config-center-3344</module>
         <module>msc-config-client-3355</module>
+        <module>msc-stream-rabbitmq-provider-8801</module>
+        <module>msc-stream-rabbitmq-consumer-8802</module>
+        <module>msc-stream-rabbitmq-consumer-8803</module>
     </modules>
 
     <packaging>pom</packaging>

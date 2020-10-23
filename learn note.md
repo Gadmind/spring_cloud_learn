@@ -225,3 +225,56 @@ SpringCloudBus能管理和传播分布式系统之间的消息，像一个分布
 在微服务架构的系统中，通常会使用轻量级的消息代理来构建一个共用的消息主题，并让系统中所有微服务实例都连接上来，由于该主题中产生的消息会被所有实例监听和消费，所以称它为消息总线，总线上的各个实例，都可以方便的广播一些需要让其他连接在该主题上的实例都知道的消息
 
 **原理**：客户端实例监听MQ中的同一个Topic （默认是SpringCloudBus）。当一个服务刷新数据时，它会把这个信息放入到Topic中，这样其他监听同一Topic的服务就能得到通知，然后更新自身配置
+
+不同组是可以全面消费（重复消费）
+
+相同组会发生竞争关系，只有其中一个可以消费
+
+**分布式请求链路跟踪Sleuth**
+
+客户端发起请求，后端系统中会经过多个不同的服务节点调用来协同产生最后的请求结果，每一个请求都会形成一条复杂的分布式服务调用链路，链路中的任何一环出现高延时或错误都会引起整个请求最后的失败
+
+zikpin：trace：类似于树结构的span集合，表示一条调用链路，存在唯一标识；Span：表示调用链路来源，通俗的理解span就是一次请求信息
+
+## SpringCloudAlibaba
+
+Spring Cloud Alibaba 致力于提供微服务开发的一站式解决方案。此项目包含开发分布式应用微服务的必需组件，方便开发者通过 Spring Cloud 编程模型轻松使用这些组件来开发分布式应用服务。
+
+依托 Spring Cloud Alibaba，您只需要添加一些注解和少量配置，就可以将 Spring Cloud 应用接入阿里微服务解决方案，通过阿里中间件来迅速搭建分布式应用系统
+
+[Spring Cloud Alibaba官网](https://spring.io/projects/spring-cloud-alibaba#overview)
+
+[Github英文文档](https://github.com/alibaba/spring-cloud-alibaba)
+
+[Spring英文文档](https://spring-cloud-alibaba-group.github.io/github-pages/hoxton/en-us/index.html)
+
+[Github中文](https://github.com/alibaba/spring-cloud-alibaba/blob/master/README-zh.md)
+
+**Spring Cloud Alibaba主要功能**
+
+- **服务降级限流**：默认支持 WebServlet、WebFlux, OpenFeign、RestTemplate、Spring Cloud Gateway, Zuul, Dubbo 和 RocketMQ 限流降级功能的接入，还支持查看限流降级Metrics监控。
+- **服务注册与发现**：适配Spring Cloud服务注册与发现的标准，默认集成了Ribbon的支持
+- **分布式管理配置**：支持分布式系统中的外部化配置，配置更改时自动刷新
+- **消息驱动能力**：基于Spring Cloud Stream为微服务应用构建消息驱动能力
+- **分布式事务**：使用@GlobalTransactional注解，高效并且对业务零侵入的解决分布式事务问题
+- **阿里云对象存储**：阿里云提供的海量、安全、低成本、高可用的云存储服务。支持在任何应用、任何时间、任何地点存储和访问任意类型的数据
+- **分布式服务调度**：提供秒级、精准、高可靠、高可用的定时（基于Cron表达式）任务调度服务。同时提供分布式的任务执行模型，如网格任务。网格任务支持海量子任务均匀分配到所有Worker（Schedulex-client）上执行
+- **阿里云短息服务**：覆盖全球的短信服务，友好、高效、智能的互联化通讯能力，帮助企业迅速搭建客户触达通道。
+
+**Spring Cloud Alibaba包含的组件**
+
+1. **Sentinel**：阿里巴巴开源产品，把流量作为切入点，从流量控制、熔断降级、系统负载保护等多个维度保护服务的稳定性。
+2. **Nacos**：阿里巴巴开源产品，一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。
+3. **RocketMQ**：Apache RocketMQ™基于Java的高性能、高吞吐量的分布式消息和计算平台，一款开源的分布式消息系统，基于高可用分布式集群技术，提供低延时的、高可靠的消息发布与订阅服务。
+4. **Dubbo**：Apache Dubbo™是一款高性能的Java RPC框架
+5. **Seate**：阿里巴巴开源产品，一个易于使用的高性能为服务分布式事务解决方案。
+6. **Alibaba Cloud OSS**：阿里云对象存储服务（Object Storage Service，简称 OSS），是阿里云提供的海量、安全、低成本、高可靠的云存储服务。您可以在任何应用、任何时间、任何地点存储和访问任意类型的数据。
+7. **Alibaba Cloud SchedulerX**：阿里中间件团队开发的一款分布式任务调度产品，提供秒级、精准、高可靠、高可用的定时（基于 Cron 表达式）任务调度服务。
+8. **Alibaba Cloud SMS**：覆盖全球的短信服务，友好、高效、智能的互联化通讯能力，帮助企业迅速搭建客户触达通道。
+
+**服务注册和配置中心之Spring Cloud Alibaba Nacos**
+
+**什么是Nacos**（AP模型）
+
+Nacos（Dynamic Naming and Configuration *S*ervice）一个更易于构建云原生应用的动态服务发现、服务配置和服务管理平台，就是Naocs = 注册中心 + 配置中心 =Spring Cloud Netflix Eureka + Spring Cloud Config +Spring Cloud  Bus
+
