@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>msc-alibaba-nacos-provider-patment-9002</artifactId>
+    <artifactId>msc-alibaba-nacos-provider-payment-9003</artifactId>
     <dependencies>
         <!--引入自定义的API通用包-->
         <dependency>
