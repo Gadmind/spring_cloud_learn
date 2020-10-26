@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>msc-alibaba-sentinel-service-8041</artifactId>
+    <artifactId>msc-alibaba-sentinel-service-8401</artifactId>
     <dependencies>
         <!--引入自定义的API通用包-->
         <dependency>

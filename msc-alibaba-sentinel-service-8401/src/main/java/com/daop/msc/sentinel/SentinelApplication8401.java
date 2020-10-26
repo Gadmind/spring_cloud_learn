@@ -1,5 +1,6 @@
 package com.daop.msc.sentinel;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -13,8 +14,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  **/
 @SpringBootApplication
 @EnableDiscoveryClient
-public class SentinelApplication8041 {
+public class SentinelApplication8401 {
     public static void main(String[] args) {
-        SpringApplication.run(SentinelApplication8041.class, args);
+        SpringApplication.run(SentinelApplication8401.class, args);
     }
 }
