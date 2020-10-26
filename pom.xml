@@ -29,6 +29,11 @@
         <module>msc-stream-rabbitmq-provider-8801</module>
         <module>msc-stream-rabbitmq-consumer-8802</module>
         <module>msc-stream-rabbitmq-consumer-8803</module>
+        <module>msc-alibaba-nacos-provider-payment-9001</module>
+        <module>msc-alibaba-nacos-provider-patment-9002</module>
+        <module>msc-alibaba-nacos-consumer-order-8080</module>
+        <module>msc-alibaba-nacos-config-client-3377</module>
+        <module>msc-alibaba-sentinel-service-8041</module>
     </modules>
 
     <packaging>pom</packaging>
