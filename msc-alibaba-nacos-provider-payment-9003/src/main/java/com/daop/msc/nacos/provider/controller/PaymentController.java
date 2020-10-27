@@ -19,7 +19,6 @@ import java.util.HashSet;
  * @AUTHOR: Administrator
  **/
 @RestController
-@RequestMapping("/nacos")
 public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
@@ -32,7 +31,7 @@ public class PaymentController {
         hashMap.put(3L, new Payment(3L, "AuPl15qrpexgIZElFnAEsakZfvVjQvYN"));
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/nacos/{id}")
     public CommonResult<Payment> getPayment(@PathVariable("id") Long id) {
         Payment payment = hashMap.get(id);
         CommonResult<Payment> result = new CommonResult<>(200, "from mysql,serverPort: " + serverPort, payment);
