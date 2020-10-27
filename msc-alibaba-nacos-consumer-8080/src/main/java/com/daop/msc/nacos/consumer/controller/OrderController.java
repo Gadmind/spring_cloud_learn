@@ -18,7 +18,6 @@ import org.springframework.web.client.RestTemplate;
  **/
 @RestController
 @Slf4j
-@RequestMapping("/consumer")
 public class OrderController {
     @Autowired
     private RestTemplate restTemplate;
@@ -26,7 +25,7 @@ public class OrderController {
     @Value("${service-url.nacos-user-service}")
     private String serverUrl;
 
-    @GetMapping("/{id}")
+//    @GetMapping("/consumer/{id}")
     public String paymentInfo(@PathVariable("id") Integer id) {
         return restTemplate.getForObject(serverUrl + "/nacos/" + id, String.class);
     }
