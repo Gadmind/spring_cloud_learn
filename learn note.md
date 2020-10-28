@@ -403,6 +403,8 @@ sentinel熔断降级会在调用链路中某个资源出现不稳定状态时（
 
 **分布式事务之Spring Cloud Alibaba Seata**
 
+Simple Extensible Autonomous Transaction Archiyecture 简单可扩展自治事务框架
+
 单体应用被拆分，各个模块应用调用各个模块独立的数据源，每个服务内部的数据一致性由本地事务保证，但整全局的数据一致性没有办法保证
 
 - **Transaction ID XID**：全局唯一的事务ID
@@ -417,3 +419,9 @@ sentinel熔断降级会在调用链路中某个资源出现不稳定状态时（
 3. RM向TC注册分支事务，将其纳入XID对应全局事务的管辖；
 4. TM向TC发起针对XID的全局提交或回滚；
 5. TC调度XID下管辖的全部分支事务完成提交或回滚请求
+
+TC：seata服务器
+
+TM：事务发起方（@GlobalTransactional）
+
+RM：事务参与方
