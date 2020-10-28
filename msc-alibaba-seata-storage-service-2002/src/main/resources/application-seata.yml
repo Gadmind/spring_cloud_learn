@@ -9,8 +9,10 @@ seata:
       my_test_tx_group: default  # 此处key需要与tx-service-group的value一致，否则会报 no available service 'null' found, please make sure registry config correct 异常
     grouplist:
       default: 127.0.0.1:8091
+
     enable-degrade: false
     disable-global-transaction: false
+
   config:
     type: nacos
     nacos:

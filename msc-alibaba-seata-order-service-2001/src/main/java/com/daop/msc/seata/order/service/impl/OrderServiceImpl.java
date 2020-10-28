@@ -5,6 +5,7 @@ import com.daop.msc.seata.order.mapper.OrderMapper;
 import com.daop.msc.seata.order.service.AccountService;
 import com.daop.msc.seata.order.service.OrderService;
 import com.daop.msc.seata.order.service.StorageService;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,7 @@ public class OrderServiceImpl implements OrderService {
      * @param order 订单
      */
     @Override
+    @GlobalTransactional(name = "creat-order",rollbackFor = Exception.class)
     public void creatOrder(Order order) {
 
         log.info("------> 开始新建订单");

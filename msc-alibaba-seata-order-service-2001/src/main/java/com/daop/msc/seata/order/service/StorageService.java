@@ -15,5 +15,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "seata-storage-service")
 public interface StorageService {
     @PostMapping("/storage/decrease")
-    CommonResult decrease(@RequestParam("produceId") Long produceId, @RequestParam("count") Integer count);
+    CommonResult decrease(@RequestParam("productId") Long productId, @RequestParam("count") Integer count);
 }

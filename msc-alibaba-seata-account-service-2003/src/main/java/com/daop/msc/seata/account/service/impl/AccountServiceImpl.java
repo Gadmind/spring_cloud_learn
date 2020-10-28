@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @BelongsProject: spring_cloud_learn
@@ -31,8 +32,10 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void decrease(Long userId, BigDecimal money) {
         log.info("------> account-service中扣减账户余额开始");
-        //模拟超时异常，全局事务回滚
+        //模拟异常，全局事务回滚
+        //int age = 10 / 0;
         accountMapper.decrease(userId, money);
         log.info("------> account-service中扣减账户余额结束");
     }
+
 }

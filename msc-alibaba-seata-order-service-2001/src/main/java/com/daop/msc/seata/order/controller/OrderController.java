@@ -25,6 +25,6 @@ public class OrderController {
     @GetMapping(ORDER_URL_PREFIX + "/create")
     public CommonResult creatOrder(Order order) {
         orderService.creatOrder(order);
-        return new CommonResult(200, "订单创建成功");
+        return new CommonResult(200, "订单创建成功",order);
     }
 }

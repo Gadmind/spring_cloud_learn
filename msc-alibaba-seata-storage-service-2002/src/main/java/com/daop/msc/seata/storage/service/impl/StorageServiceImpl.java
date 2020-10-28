@@ -23,6 +23,7 @@ public class StorageServiceImpl implements StorageService {
     @Override
     public void decrease(Long produceId, Integer count) {
         log.info("------> storage-service中扣减库存开始");
+        log.info("------> 商品ID：" + produceId + "\t 扣减数量：" + count);
         storageMapper.decrease(produceId, count);
         log.info("------> storage-service中扣减库存结束");
     }

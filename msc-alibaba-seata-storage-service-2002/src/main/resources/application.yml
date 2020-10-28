@@ -4,9 +4,6 @@ spring:
   application:
     name: seata-storage-service
   cloud:
-    alibaba:
-      seata:
-        tx-service-group: default
     nacos:
       discovery:
         server-addr: localhost:8848
